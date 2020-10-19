@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>{{greet()}}</h1>
+      <h1>{{greetSomeone("John doe")}}</h1>
+      <h1>{{greetStoredName()}}</h1>
+    </div>
+    <script>
+      new Vue({
+        el: "#vue-app",
+        data: {
+          name: "Jane doe",
+        },
+        methods: {
+          greet() {
+            return "Hello";
+          },
+          greetSomeone(name) {
+            return `Hello ${name}`;
+          },
+          greetStoredName() {
+            return `Hi, ${this.name}`;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
