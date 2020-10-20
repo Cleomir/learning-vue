@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <a v-bind:href="google">Google</a>
+      <br />
+      <a :href="linkedin">Linkedin</a>
+      <br />
+      <p v-html="htmlContent"></p>
+    </div>
+    <script>
+      new Vue({
+        el: "#vue-app",
+        data: {
+          google: "https://google.com",
+          linkedin: "https://linkedin.com",
+          htmlContent: '<a href="https://facebook.com">Facebook</a>',
+        },
+      });
+    </script>
+  </body>
+</html>
