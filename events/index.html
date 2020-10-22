@@ -22,6 +22,8 @@
       <button v-on:dblclick="add(10)">Add 10(double click)</button>
       <button @dblclick="subtract(10)">Subtract 10(double click)</button>
       <div id="canvas" @mousemove="updateXY">{{x}},{{y}}</div>
+      <label>Name</label>
+      <input type="text" @keyup="logName" />
     </div>
     <script>
       new Vue({
@@ -29,7 +31,7 @@
         data: {
           counter: 100,
           x: 0,
-          y: 0
+          y: 0,
         },
         methods: {
           add(increement) {
@@ -41,7 +43,10 @@
           updateXY(event) {
             this.x = event.offsetX;
             this.y = event.offsetY;
-          }
+          },
+          logName(event) {
+            console.log(event.target.value);
+          },
         },
       });
     </script>
