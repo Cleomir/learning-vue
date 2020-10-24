@@ -7,12 +7,19 @@
     <script src="https://unpkg.com/vue"></script>
   </head>
   <body>
+    <style>
+      .active {
+        background-color: red;
+      }
+    </style>
     <div id="vue-app">
       <a v-bind:href="google">Google</a>
       <br />
       <a :href="linkedin">Linkedin</a>
       <br />
       <p v-html="htmlContent"></p>
+      <button @click=" active = !active">Toggle active class</button>
+      <div :class="activeDiv">Toggle me</div>
     </div>
     <script>
       new Vue({
@@ -21,6 +28,14 @@
           google: "https://google.com",
           linkedin: "https://linkedin.com",
           htmlContent: '<a href="https://facebook.com">Facebook</a>',
+          active: false,
+        },
+        computed: {
+          activeDiv() {
+            return {
+              active: this.active,
+            };
+          },
         },
       });
     </script>
