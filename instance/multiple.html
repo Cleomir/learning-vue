@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="vue-app-one">
+      <h1>{{title}}</h1>
+      <p>{{greet}}</p>
+      <button @click="changeAppTwoTitle">Change app two title</button>
+    </div>
+
+    <div id="vue-app-two">
+      <h1>{{title}}</h1>
+      <p>{{greet}}</p>
+      <button @click="changeAppOneTitle">Change app one title</button>
+    </div>
+    <script>
+      const instanceOne = new Vue({
+        el: "#vue-app-one",
+        data: {
+          title: "App one",
+        },
+        methods: {
+          changeAppTwoTitle() {
+            instanceTwo.title = "Title changed";
+          },
+        },
+        computed: {
+          greet() {
+            return "App one here";
+          },
+        },
+      });
+      const instanceTwo = new Vue({
+        el: "#vue-app-two",
+        data: {
+          title: "App two",
+        },
+        methods: {
+          changeAppOneTitle() {
+            instanceOne.title = "Title changed";
+          },
+        },
+        computed: {
+          greet() {
+            return "App two here";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
