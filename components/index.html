@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <greeting></greeting>
+    </div>
+    <script>
+      Vue.component("greeting", {
+        template: `<p>Hey there, my name is {{ name }}. <button @click="changeName">Change name</button></p>`,
+        data() {
+          return {
+            name: "John doe",
+          };
+        },
+        methods: {
+          changeName() {
+            this.name = "Mario";
+          },
+        },
+      });
+      new Vue({
+        el: "#vue-app",
+        data: {
+          text: "Hello world",
+        },
+      });
+    </script>
+  </body>
+</html>
