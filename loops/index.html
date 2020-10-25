@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <ul>
+        <li v-for="(person, index) in people">{{ index }}. {{ person }}</li>
+      </ul>
+      <div>
+        <template v-for="(person, index) in people">
+          <h3>Name {{ index }}</h3>
+          <p>{{ person }}</p>
+        </template>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: "#vue-app",
+        data: {
+          people: ["John", "Jane", "Buckaroo"],
+        },
+      });
+    </script>
+  </body>
+</html>
