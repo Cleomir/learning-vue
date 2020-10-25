@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <input type="text" ref="input" />
+      <button @click="readRefs">Submit</button>
+      <p>Your inputted value: {{ output }}</p>
+    </div>
+    <script>
+      new Vue({
+        el: "#vue-app",
+        data: {
+          output: "",
+        },
+        methods: {
+          readRefs() {
+            this.output = this.$refs.input.value;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
