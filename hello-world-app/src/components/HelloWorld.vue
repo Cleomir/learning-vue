@@ -2,10 +2,13 @@
   <div>
     <h1>{{ title }}</h1>
     <p>{{ greeting() }}</p>
+    <Nested />
   </div>
 </template>
 
 <script>
+import Nested from './Nested'
+
 export default {
   name: "HelloWorld",
   data() {
@@ -18,6 +21,9 @@ export default {
       return "Learning Vue";
     },
   },
+  components: {
+    Nested
+  }
 };
 </script>
 
