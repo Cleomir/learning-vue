@@ -10,8 +10,8 @@
   <body>
     <div id="app">
       <p>
-        <router-link to="/foo">Go to Foo</router-link>
-        <router-link to="/bar">Go to Bar</router-link>
+        <router-link to="/foo" exact>Go to Foo</router-link>
+        <router-link to="/bar" exact>Go to Bar</router-link>
       </p>
       <router-view></router-view>
     </div>
@@ -35,6 +35,7 @@
       ];
       const router = new VueRouter({
         routes,
+        mode: "history"
       });
       const app = new Vue({
         router,
