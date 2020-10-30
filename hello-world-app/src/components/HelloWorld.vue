@@ -2,7 +2,7 @@
   <div>
     <h1>{{ title }}</h1>
     <p>{{ greeting() }}</p>
-    <Nested />
+    <Nested :names="names" />
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       title: "Hello world",
+      names: ["Yoshi", "Mario", "Ryu", "John"],
     };
   },
   methods: {

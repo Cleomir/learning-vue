@@ -6,10 +6,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      names: ["Yoshi", "Mario", "Ryu"],
-    };
-  },
+  props: ["names"],
 };
 </script>
