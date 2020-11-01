@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import App from "./App.vue";
 import Nested from "./components/Nested.vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import LifecycleHooks from './components/LifecycleHooks.vue';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -17,6 +18,10 @@ const routes = [
     path: "/hello",
     component: HelloWorld,
   },
+  {
+    path: "/lifecycle",
+    component: LifecycleHooks
+  }
 ];
 const router = new VueRouter({
   routes,
