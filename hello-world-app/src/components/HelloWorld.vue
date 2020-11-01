@@ -2,7 +2,7 @@
   <div>
     <h1>{{ title }}</h1>
     <p>{{ greeting() }}</p>
-    <Nested :names="names" />
+    <Nested @changeTitle="updateTitle($event)" :names="names" />
   </div>
 </template>
 
@@ -13,13 +13,16 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      title: "Hello world",
+      title: "Hello World",
       names: ["Yoshi", "Mario", "Ryu", "John"],
     };
   },
   methods: {
     greeting() {
       return "Learning Vue";
+    },
+    updateTitle(updatedTitle) {
+      this.title = updatedTitle;
     },
   },
   components: {
