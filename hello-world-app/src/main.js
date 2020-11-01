@@ -7,6 +7,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
+export const bus = new Vue();
 const routes = [
   {
     path: "/",
