@@ -4,12 +4,17 @@
     <p>{{ greeting() }}</p>
     <Nested @changeTitle="updateTitle($event)" :names="names" />
     <Sibling />
+    <Slots>
+      <p slot="slot1">Slot content 1</p>
+      <p slot="slot2">Slot content 2</p>
+    </Slots>
   </div>
 </template>
 
 <script>
 import Nested from "./Nested";
 import Sibling from "./Sibling";
+import Slots from "./Slots";
 
 export default {
   name: "HelloWorld",
@@ -30,6 +35,7 @@ export default {
   components: {
     Nested,
     Sibling,
+    Slots,
   },
 };
 </script>
