@@ -5,7 +5,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import LifecycleHooks from "./components/LifecycleHooks.vue";
 import FormBinding from "./components/FormBinding.vue";
 import CustomDirective from "./components/CustomDirective.vue";
-import NavLinks from './components/NavLinks.vue'
+import RouteParams from "./components/RouteParams.vue";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -30,10 +30,6 @@ Vue.filter("toUpperCase", (value) => {
 
 const routes = [
   {
-    path: "/",
-    component: NavLinks,
-  },
-  {
     path: "/hello",
     component: HelloWorld,
   },
@@ -49,10 +45,14 @@ const routes = [
     path: "/custom-directive",
     component: CustomDirective,
   },
+  {
+    path: "/route-params/:id",
+    component: RouteParams,
+  },
 ];
 const router = new VueRouter({
   routes,
-  mode: "history"
+  mode: "history",
 });
 
 export const bus = new Vue();

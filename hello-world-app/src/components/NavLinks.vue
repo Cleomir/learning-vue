@@ -7,6 +7,9 @@
       <li>
         <router-link to="/custom-directive">Custom Directives</router-link>
       </li>
+      <li>
+        <router-link to="/route-params/10">Route Params</router-link>
+      </li>
     </ul>
   </nav>
 </template>
