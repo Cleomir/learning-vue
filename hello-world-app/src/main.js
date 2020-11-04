@@ -52,6 +52,7 @@ const routes = [
 ];
 const router = new VueRouter({
   routes,
+  mode: "history"
 });
 
 export const bus = new Vue();
