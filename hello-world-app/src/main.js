@@ -1,11 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
-import Nested from "./components/Nested.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import LifecycleHooks from "./components/LifecycleHooks.vue";
 import FormBinding from "./components/FormBinding.vue";
 import CustomDirective from "./components/CustomDirective.vue";
+import NavLinks from './components/NavLinks.vue'
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -31,7 +31,7 @@ Vue.filter("toUpperCase", (value) => {
 const routes = [
   {
     path: "/",
-    component: Nested,
+    component: NavLinks,
   },
   {
     path: "/hello",

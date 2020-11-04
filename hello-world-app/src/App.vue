@@ -1,21 +1,23 @@
 <template>
   <div id="app">
+    <NavLinks />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import NavLinks from "./components/NavLinks";
+
 export default {
   name: "App",
+  components: {
+    NavLinks,
+  },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
 }
 </style>
