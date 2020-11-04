@@ -15,6 +15,12 @@
       <label>Vue</label>
       <input type="checkbox" value="Vue" v-model="blog.categories" />
     </div>
+    <label>Names:</label>
+    <select v-model="blog.author">
+      <option v-for="(author, index) in authors" :key="index">{{
+        author
+      }}</option>
+    </select>
     <div id="preview">
       <h3>Preview Blog</h3>
       <p>Blog title: {{ blog.title }}</p>
@@ -25,6 +31,7 @@
           {{ category }}
         </li>
       </ul>
+      <p>Author: {{ blog.author }}</p>
     </div>
   </div>
 </template>
@@ -37,7 +44,9 @@ export default {
         title: "",
         content: "",
         categories: [],
+        author: "",
       },
+      authors: ["John", "Jane", "Foo"],
     };
   },
 };
