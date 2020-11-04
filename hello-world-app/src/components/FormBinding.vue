@@ -24,7 +24,7 @@
     <div id="preview">
       <h3>Preview Blog</h3>
       <p>Blog title: {{ blog.title | toUpperCase }}</p>
-      <p>Blog content: {{ blog.content }}</p>
+      <p>Blog content: {{ blog.content | dots }}</p>
       <p>Blog categories:</p>
       <ul>
         <li v-for="(category, index) in blog.categories" :key="index">
@@ -48,6 +48,11 @@ export default {
       },
       authors: ["John", "Jane", "Foo"],
     };
+  },
+  filters: {
+    dots: (value) => {
+      return `${value}...`;
+    },
   },
 };
 </script>
