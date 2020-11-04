@@ -24,7 +24,10 @@ Vue.directive("theme", {
   },
 });
 
-export const bus = new Vue();
+Vue.filter("toUpperCase", (value) => {
+  return value.toUpperCase();
+});
+
 const routes = [
   {
     path: "/",
@@ -51,6 +54,7 @@ const router = new VueRouter({
   routes,
 });
 
+export const bus = new Vue();
 new Vue({
   render: (h) => h(App),
   router,
