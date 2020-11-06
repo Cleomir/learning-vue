@@ -9,18 +9,21 @@
   </head>
   <body>
     <div id="app">
-      <p>
-        <router-link to="/foo" exact>Go to Foo</router-link>
-        <router-link to="/bar" exact>Go to Bar</router-link>
-      </p>
+      <ul>
+        <li><router-link to="/foo" exact>Go to Foo</router-link></li>
+        <li><router-link to="/bar" exact>Go to Bar</router-link></li>
+        <li><router-link to="/js" exact>Go to JS component</router-link></li>
+      </ul>
       <router-view></router-view>
     </div>
-    <script>
+    <script type="module">
+      import JsComponent from "./JsComponent.js";
+
       const Foo = {
-        template: "<div>Foo</div>",
+        template: "<div><h1>Foo</h1></div>",
       };
       const Bar = {
-        template: "<div>Bar</div>",
+        template: "<div><h1>Bar</h1></div>",
       };
 
       const routes = [
@@ -32,10 +35,14 @@
           path: "/bar",
           component: Bar,
         },
+        {
+          path: "/js",
+          component: JsComponent,
+        },
       ];
       const router = new VueRouter({
         routes,
-        mode: "history"
+        mode: "history",
       });
       const app = new Vue({
         router,
