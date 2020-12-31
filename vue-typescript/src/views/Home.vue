@@ -1,17 +1,16 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <Interpolation />
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import Interpolation from "@/components/Interpolation.vue";
+import { defineComponent } from "vue";
 
-@Options({
+export default defineComponent({
   components: {
-    HelloWorld,
+    Interpolation,
   },
-})
-export default class Home extends Vue {}
+});
 </script>
