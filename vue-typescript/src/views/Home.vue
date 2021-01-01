@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <Interpolation />
+    <CompositionAPI />
   </div>
 </template>
 
 <script lang="ts">
-import Interpolation from "@/components/Interpolation.vue";
+import CompositionAPI from "@/components/CompositionAPI.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   components: {
-    Interpolation,
+    CompositionAPI,
   },
 });
 </script>
