@@ -7,6 +7,7 @@
     <div>
       <span>{{ nameToUpperCase }}</span>
     </div>
+    <Props :props="props" />
   </div>
 </template>
 
@@ -20,10 +21,14 @@ import {
   watchEffect,
 } from "vue";
 
+import Props from "./Props.vue";
+
 export default defineComponent({
+  components: { Props },
   setup() {
     const name = ref("John");
     const person = reactive({ name: "Jane", age: 30 });
+    const props = ref([{ name: "Prop1" }, { name: "Prop2" }]);
 
     const changeName = () => {
       name.value = "Doe";
@@ -52,6 +57,7 @@ export default defineComponent({
       changeName,
       changePerson,
       nameToUpperCase,
+      props,
     };
   },
 });
