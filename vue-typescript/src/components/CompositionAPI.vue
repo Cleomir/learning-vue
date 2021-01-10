@@ -8,6 +8,11 @@
       <span>{{ nameToUpperCase }}</span>
     </div>
     <Props :props="props" />
+    <button @click="loadPost">Load Post</button>
+    <!-- <ul v-for="(post, index) in posts" :key="index">
+      <li>{{ post.title }}</li>
+    </ul> -->
+    <p>{{ post.title }}</p>
   </div>
 </template>
 
@@ -22,6 +27,7 @@ import {
   onMounted,
   onUnmounted,
 } from "vue";
+import axios from "axios";
 
 import Props from "./Props.vue";
 
@@ -32,6 +38,7 @@ export default defineComponent({
     const name = ref("John");
     const person = reactive({ name: "Jane", age: 30 });
     const props = ref([{ name: "Prop1" }, { name: "Prop2" }]);
+    const post = ref({});
 
     // methods
     const changeName = () => {
@@ -57,6 +64,15 @@ export default defineComponent({
     onMounted(() => console.log("component mounted"));
     onUnmounted(() => console.log("component unmounted"));
 
+    //async
+    const loadPost = async () => {
+      const { data } = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts/1"
+      );
+      console.log("Response: ", data);
+      post.value = data;
+    };
+
     return {
       name,
       person,
@@ -64,6 +80,8 @@ export default defineComponent({
       changePerson,
       nameToUpperCase,
       props,
+      loadPost,
+      post,
     };
   },
 });
